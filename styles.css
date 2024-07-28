@@ -12,6 +12,12 @@ body {
 h1 {
     color: #333;
 }
+.hidden {
+	display: none;
+}
+.visible {
+	display: block;
+}
 .form-section, .token-section {
     background: #fff;
     padding: 20px;

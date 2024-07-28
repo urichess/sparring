@@ -10,12 +10,11 @@
     <h1>Lichess Sparring</h1>
 
     <div class="token-section">
-        <h2>Token</h2>
-        <label for="lichessToken">Lichess Token:</label>
-        <input type="text" id="lichessToken" name="lichessToken" required>
+        <button type="button" id="loginButton">Login</button>
+        <button type="button" id="logoutButton" style="display: none;">Logout</button>
     </div>
 
-    <div class="form-section">
+    <div class="form-section" id="fen-div">
         <h2>Load Positions (FENs)</h2>
         <form id="fenForm" class="fen-form">
             <div class="form-group">
@@ -36,7 +35,7 @@
         </form>
     </div>
 
-    <div class="form-section">
+    <div class="form-section" id="challenge-div">
         <h2>Challenge</h2>
         <form id="challengeForm">
             <div class="radio-group">

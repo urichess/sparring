@@ -1,0 +1,27 @@
+{
+  "name": "sparring-urichess",
+  "version": "1.0.0",
+  "description": "urichess tools",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urichess/sparring.git"
+  },
+  "keywords": [
+    "sparring",
+    "lichess"
+  ],
+  "author": "Zero Override",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/urichess/sparring/issues"
+  },
+  "homepage": "https://github.com/urichess/sparring#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
