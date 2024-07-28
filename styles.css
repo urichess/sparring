@@ -1,114 +1,191 @@
-/* Basic styles to enhance readability */
+/* styles.css */
+
+/* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f7f9fc;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
-h1 {
+
+h1, h2 {
     color: #333;
+    font-weight: normal;
 }
-.hidden {
-	display: none;
+
+/* Header styles */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.4em;
 }
-.visible {
-	display: block;
+
+/* Token section styles */
+.token-section {
+    text-align: center;
+    margin: 20px 0;
 }
-.form-section, .token-section {
-    background: #fff;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 600px;
-}
-.form-section h2, .token-section h2 {
-    margin-top: 0;
-}
-.form-section label, .token-section label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-.form-section input[type="text"],
-.form-section textarea,
-.form-section select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-.form-section input[type="file"] {
-    display: none;
-}
-.form-section .file-label,
-.form-section button,
-.form-section input[type="submit"] {
-    background-color: #008cba;
+
+button {
+    background-color: #007bff;
+    border: 1px solid #007bff;
     color: white;
-    padding: 10px 15px;
-    border: none;
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    text-align: center;
-    display: inline-block;
-    margin-bottom: 10px;
+    margin: 0 10px;
 }
-.form-section .file-label:hover,
-.form-section button:hover,
-.form-section input[type="submit"]:hover {
-    background-color: #005f75;
+
+button:hover {
+    background-color: #0056b3;
+    border-color: #004080;
 }
-.form-section input[type="checkbox"] {
-    margin-right: 8px;
+
+/* Form section styles */
+.form-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
+
+h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* Form elements styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+.form-group label {
+    margin-bottom: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.form-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+button#fetchStudy {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Adjust margin for better mobile layout */
+}
+
+button#fetchStudy:hover {
+    background-color: #0056b3;
+    border-color: #004080;
+}
+
+/* Ensure input and button are on the same line */
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Radio and select group styles */
 .radio-group {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
 .radio-group label {
     margin-right: 20px;
-    font-weight: normal;
 }
-.radio-group input[type="radio"] {
-    margin-right: 10px;
-}
+
 .username-group {
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.username-group input {
-    margin-left: 10px;
-    flex: 1;
+
+.username-group.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
-.fen-form {
-    display: flex;
-    flex-direction: column;
+
+/* Utility classes */
+.hidden {
+    display: none;
 }
-.fen-form .form-group {
-    margin-bottom: 10px;
+
+.visible {
+    display: block;
 }
-.fen-form .form-group input[type="text"] {
-    display: inline-block;
-    width: calc(100% - 150px);
-    margin-right: 10px;
-}
-.fen-form .form-group button {
-    display: inline-block;
-    width: 140px;
-}
-.fen-form textarea {
-    width: calc(100% - 20px);
-    margin-top: 10px;
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    button#fetchStudy {
+        width: 100%;
+    }
+
+    button, input[type="submit"] {
+        width: 100%;
+    }
 }
 
