@@ -37,8 +37,7 @@ h1 {
 }
 .form-section input[type="text"],
 .form-section textarea,
-.form-section select,
-.token-section input[type="text"] {
+.form-section select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
