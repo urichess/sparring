@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (match) {
             let studyId = match[1];
             let url = `https://lichess.org/api/study/${studyId}.pgn`;
-            let token = document.getElementById("oauth2Token").value;
+            const token = localStorage.getItem("oauth2Token");
 
             fetch(url, {
                 headers: {
