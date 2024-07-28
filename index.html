@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Lichess Sparring</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <h1>Lichess Sparring</h1>
+
+    <div class="token-section">
+        <h2>Token</h2>
+        <label for="lichessToken">Lichess Token:</label>
+        <input type="text" id="lichessToken" name="lichessToken" required>
+    </div>
+
+    <div class="form-section">
+        <h2>Load Positions (FENs)</h2>
+        <form id="fenForm" class="fen-form">
+            <div class="form-group">
+                <label for="pgnFile" class="file-label">Get from PGN File</label>
+                <input type="file" id="pgnFile" name="pgnFile" accept=".pgn">
+            </div>
+            <div class="form-group">
+                <label for="studyLink">Get from study:</label>
+                <input type="text" id="studyLink" name="studyLink">
+                <button type="button" id="fetchStudy">Fetch Study</button>
+            </div>
+            <label for="fenList">Loaded FEN Positions (one per line):</label>
+            <textarea id="fenList" name="fenList" rows="6" cols="50"></textarea><br>
+            <label for="removeFen">
+                <input type="checkbox" id="removeFen" name="removeFen" checked>
+                Remove chosen FEN from list after challenge
+            </label>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Challenge</h2>
+        <form id="challengeForm">
+            <div class="radio-group">
+                <input type="radio" id="challengeUser" name="opponent" value="user" checked>
+                <label for="challengeUser">User</label>
+                <input type="radio" id="challengeStockfish" name="opponent" value="stockfish">
+                <label for="challengeStockfish">Stockfish</label>
+            </div>
+            <div class="username-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username (if challenging user)">
+            </div>
+            <label for="timeControl">Time Control (e.g., 3+2):</label>
+            <input type="text" id="timeControl" name="timeControl" value="3+2" required><br>
+            <label for="color">Choose Color:</label>
+            <select id="color" name="color">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="random">Random</option>
+            </select><br>
+            <input type="submit" value="Send Challenge">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
